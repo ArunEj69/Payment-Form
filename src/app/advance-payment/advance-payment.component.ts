@@ -49,7 +49,7 @@ export class AdvancePaymentComponent implements OnInit {
     this.paymentform = this.formBuilder.group(
       {
         paymentMode: ['', Validators.required],
-        paymentAmount: ['',[Validators.required,Validators.pattern(/^[+]?([1-9]+(?:[\.][1-9]*)?|\.[1-9]+)$/)]],
+        paymentAmount: ['',[Validators.required,Validators.pattern(/^-?([1-9]\d*)?$/)]],
         paymentRemarks: ['', [Validators.required]]
       }
     );
@@ -71,5 +71,4 @@ export class AdvancePaymentComponent implements OnInit {
     this.submitted = false;
     this.paymentform.reset();
   }
-
 }
